@@ -21,7 +21,7 @@
               </select>
               <label for="models">Choose a model:</label>    
               <select name="models[]" id="models">
-                 <option value="1" data-car-make="1">Clio</option>
+    <option value="1" data-car-make="1">Clio</option>
     <option value="2" data-car-make="1" data-price="12000">Megane</option>
     <option value="3" data-car-make="1" data-price="14300">Duster</option>
     <option value="4" data-car-make="1" data-price="15000">Sandero</option>
@@ -52,37 +52,37 @@
               <label for="engine">Engine</label>
               <input type="text" id="engine" placeholder="from 1.1 to 3.8" name="engine" required min="1.1" max="3.8" pattern="\d+(\.\d{1,2})?">
             
-                 <div id="car_new-used">
+              <div id="car_new-used">
           <input type="radio" id="new" name="car" value="new">
           <label for="new">New</label>
           <input type="radio" id="used" name="car" value="new">
           <label for="used">Used</label>
-         </div>
+        </div>
             <div id="used_owners">
           <input type="radio" id="oneowner" name="owner" value="oneowner">
           <label for="new">1 owner</label>
           <input type="radio" id="twoowners" name="owner" value="twoowners">
           <label for="used">2 or more owners</label>
-         </div>
+        </div>
             
             
-         <p>Payment methods</p>
-         <div class="payment_methods">
+        <p>Payment methods</p>
+        <div class="payment_methods">
           <input type="radio" id="check" name="payment" value="check">
           <label for="check">Check</label>
-         
+        
           <input type="radio" id="card" name="payment" value="card">
           <label for="card">Credit card</label>
         
           <input type="radio" id="cash" name="payment" value="cash">
           <label for="cash">Cash</label>
-         </div>
+        </div>
           </form>
-  <div id="totalprice">
+        <div id="totalprice">
               <button type="submit" id="calculate_btn" onclick="calculatePrice()">Calculate
               </button>
           <p id="result"></p></div>
-         </div>
-         <script src="/assets/scripts/script.js"></script>
+      </div>
+        <script src="/assets/scripts/script.js"></script>
   </body>
   </html>
