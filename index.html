@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="/assets/styles/styles.css" type="text/css" media="screen" charset="utf-8">
+  </head>
+  <body>
+      <div class="wrapper">
+          <div class="red_square"><h3>Price Calculator</h3></div>
+          <form name="calculator"> 
+              <label for="cars">Choose a car:</label>    
+              <select name="cars[]" id="cars">
+                  <option value="1">Renault</option>
+                  <option value="2">Opel</option>
+                  <option value="3">Mazda</option>
+                  <option value="4">Jaguar</option>
+              </select>
+              <label for="models">Choose a model:</label>    
+              <select name="models[]" id="models">
+                 <option value="1" data-car-make="1">Clio</option>
+    <option value="2" data-car-make="1" data-price="12000">Megane</option>
+    <option value="3" data-car-make="1" data-price="14300">Duster</option>
+    <option value="4" data-car-make="1" data-price="15000">Sandero</option>
+    <option value="5" data-car-make="2" data-price="12500">Astra</option>
+    <option value="6" data-car-make="2" data-price="14800">Corsa</option>
+    <option value="7" data-car-make="2" data-price="15300">Grandland</option>
+    <option value="8" data-car-make="2" data-price="14200">Insignia</option>
+    <option value="9" data-car-make="3" data-price="18000">CX-30</option>
+    <option value="10" data-car-make="3" data-price="17500">CX-5</option>
+    <option value="11" data-car-make="3" data-price="16000">CX-9</option>
+    <option value="12" data-car-make="3" data-price="14000">CX-9</option>
+    <option value="13" data-car-make="4" data-price="28000">F-Pace</option>
+              </select>
+              <p>Fuel type:</p>
+              <div class="fuel_check">
+                  <input type="radio" id="petrol" name="fuel_type" value="petrol">
+                  <label for="petrol">Petrol</label>
+                
+                  <input type="radio" id="gas" name="fuel_type" value="gas">
+                  <label for="gas">Gas</label>
+                
+                  <input type="radio" id="diesel" name="fuel_type" value="diesel">
+                  <label for="diesel">Diesel</label>
+                
+                  <input type="radio" id="electric" name="fuel_type" value="electric">
+                  <label for="electric">Electric</label>
+              </div>
+              <label for="engine">Engine</label>
+              <input type="text" id="engine" placeholder="from 1.1 to 3.8" name="engine" required min="1.1" max="3.8" pattern="\d+(\.\d{1,2})?">
+            
+                 <div id="car_new-used">
+          <input type="radio" id="new" name="car" value="new">
+          <label for="new">New</label>
+          <input type="radio" id="used" name="car" value="new">
+          <label for="used">Used</label>
+         </div>
+            <div id="used_owners">
+          <input type="radio" id="oneowner" name="owner" value="oneowner">
+          <label for="new">1 owner</label>
+          <input type="radio" id="twoowners" name="owner" value="twoowners">
+          <label for="used">2 or more owners</label>
+         </div>
+            
+            
+         <p>Payment methods</p>
+         <div class="payment_methods">
+          <input type="radio" id="check" name="payment" value="check">
+          <label for="check">Check</label>
+         
+          <input type="radio" id="card" name="payment" value="card">
+          <label for="card">Credit card</label>
+        
+          <input type="radio" id="cash" name="payment" value="cash">
+          <label for="cash">Cash</label>
+         </div>
+          </form>
+  <div id="totalprice">
+              <button type="submit" id="calculate_btn" onclick="calculatePrice()">Calculate
+              </button>
+          <p id="result"></p></div>
+         </div>
+         <script src="/assets/scripts/script.js"></script>
+  </body>
+  </html>
