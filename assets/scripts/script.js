@@ -18,14 +18,14 @@ const carModel = document.getElementById("car-model");
 const calculateButton = document.getElementById('calculate_btn');
 
 carSelect.addEventListener('change', () => {
-  const selectedMake = carSelect.options[carSelect.selectedIndex].value;
-  modelSelect.querySelectorAll('option').forEach((option) => {
+const selectedMake = carSelect.options[carSelect.selectedIndex].value;
+modelSelect.querySelectorAll('option').forEach((option) => {
     if (option.dataset.carMake === selectedMake) {
-      option.style.display = 'block';
+    option.style.display = 'block';
     } else {
-      option.style.display = 'none';
+    option.style.display = 'none';
     }
-  });
+});
 });
 
 //function checkValidNumber(input) {
@@ -37,50 +37,48 @@ function calculatePrice() {
 const selectedCarModel = carModelSelect.options[carModelSelect.selectedIndex];
 const carPrice = selectedCarModel.dataset.price;
 const fuelTypeElement = document.querySelector('input[name="fuel_type"]:checked');
-  if (!fuelTypeElement) {
+if (!fuelTypeElement) {
     return;
-  }
-  let discount = 0;
-  if (newUsed === "new") {
+}
+let discount = 0;
+if (newUsed === "new") {
 } else if (newUsed === "used") {
-  discount = 10;
+discount = 10;
 }
 let discountUsed = 0;
-  if(owners === "oneowner"){
-  } else if (owners === "twoowners"){
-      discountUsed = 10;
+if(owners === "oneowner"){
+} else if (owners === "twoowners"){
+    discountUsed = 10;
     }
-  
-  const priceAfterDiscount = parseFloat(carPrice) - (parseFloat(carPrice) * discount / 100) - (parseFloat(carPrice) * discountUsed / 100)
-  let price = priceAfterDiscount;
-  
-  if (fuelTypeElement.value === "diesel") {
-    price *= 1.05;
-  } else if (fuelTypeElement.value === "hybrid") {
-    price *= 1.1;
-  } else if (fuelTypeElement.value === "electric") {
-    price *= 1.25;
-  }
 
- 
-  if (engineSize >= 1.1 && engineSize <= 1.6) {
-    price *= 1.03;
-  } else if (engineSize > 1.6 && engineSize <= 2.4) {
+  const priceAfterDiscount = parseFloat(carPrice) - (parseFloat(carPrice) * discount / 100) - (parseFloat(carPrice) * discountUsed / 100)
+let price = priceAfterDiscount;
+if (fuelTypeElement.value === "diesel") {
     price *= 1.05;
-  } else {
+} else if (fuelTypeElement.value === "hybrid") {
     price *= 1.1;
-  }
-  return price;
+} else if (fuelTypeElement.value === "electric") {
+    price *= 1.25;
+}
+
+if (engineSize >= 1.1 && engineSize <= 1.6) {
+    price *= 1.03;
+} else if (engineSize > 1.6 && engineSize <= 2.4) {
+    price *= 1.05;
+} else {
+    price *= 1.1;
+}
+return price;
 }
 
 calculateButton.addEventListener('click', () => {
-  const totalPrice = document.getElementById('result');
-  totalPrice.textContent = calculatePrice().toFixed(0);
+const totalPrice = document.getElementById('result');
+totalPrice.textContent = calculatePrice().toFixed(0);
 });
-  checkedNew.addEventListener('click', function(){
+checkedNew.addEventListener('click', function(){
     carUse.style.display = 'none';
-  })
-  checkedUsed.addEventListener('click', function(){
+})
+checkedUsed.addEventListener('click', function(){
     carUse.style.display = 'block';
-  })
+})
 
